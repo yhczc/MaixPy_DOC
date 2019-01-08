@@ -1,0 +1,40 @@
+* [Brief](/)
+* [Hardware](/en/hardware/hardware.md)
+  * [M1(Lichee Dan)](/en/hardware/M1_Dan.md)
+  * [Maix BiT](/en/hardware/BiT.md)
+  * [Maix Go](/en/hardware/Go.md)
+* [Get Started](/en/get_started.md)
+* [Basic Syntax](/en/mpy_basic_syntax/mpy_basic_syntax.md)
+* [Libraries](/en/libs/libs.md)
+  * [standard](/en/libs/standard/standard.md)
+    * [cmath](/en/libs/standard/cmath.md)
+    * [gc](/en/libs/standard/gc.md)
+    * [math](/en/libs/standard/math.md)
+    * [sys](/en/libs/standard/sys.md)
+    * [ubinascii](/en/libs/standard/ubinascii.md)
+    * [ucollections](/en/libs/standard/ucollections.md)
+    * [uerrno](/en/libs/standard/uerrno.md)
+    * [uheapq](/en/libs/standard/uheapq.md)
+    * [uos](/en/libs/standard/uos.md)
+    * [ure](/en/libs/standard/ure.md)
+    * [uselect](/en/libs/standard/uselect.md)
+    * [ustruct](/en/libs/standard/ustruct.md)
+    * [utime](/en/libs/standard/utime.md)
+    * [uzlib](/en/libs/standard/uzlib.md)
+  * [machine](/en/libs/machine/machine.md)
+    * [I2C](/en/libs/machine/i2c.md)
+    * [PWM](/en/libs/machine/pwm.md)
+    * [SPI](/en/libs/machine/spi.md)
+    * [Timer](/en/libs/machine/timer.md)
+    * [UART](/en/libs/machine/uart.md)
+* [Contribute](/en/convention/convention.md)
+  * [doc convention](/en/convention/doc_convention.md)
+  * [code convention](/en/convention/code_convention.md)
+
+* [Open source projects](/en/open_projects.md)
+
+
+
+
+
+
