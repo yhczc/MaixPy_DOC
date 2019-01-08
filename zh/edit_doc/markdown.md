@@ -8,6 +8,14 @@ Markdown 语法
 * 扩展语法
 * 文件嵌入
 
+## Markdown 语法
+
+[docsify-themeable markdown](https://jhildenbiddle.github.io/docsify-themeable/#/markdown)
+
+
+## Emoji
+
+Emoji表情表格:[emoji cheat sheet](https://www.webfx.com/tools/emoji-cheat-sheet/)
 
 ## 扩展语法
 
