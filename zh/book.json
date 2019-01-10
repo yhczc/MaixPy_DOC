@@ -1,0 +1,28 @@
+{
+    "title": "MaixPy 文档",
+    "description": "MaixPy 文档",
+    "language" : "zh-hans",
+    "structure": {
+        "summary": "SUMMARY.md",
+        "readme": "README.md"
+    },
+    "variables": {
+        "items": [
+            {
+                "name": "Blog",
+                "link": "https://blog.sipeed.com"
+            }
+        ],
+        "version": [
+            {
+                "name": "1.0",
+                "links": [
+                    {
+                        "name": "1.0",
+                        "link": "/zh/"
+                    }
+                ]
+            }
+        ]
+    }
+}

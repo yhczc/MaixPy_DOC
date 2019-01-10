@@ -1,0 +1,40 @@
+{
+    "title": "MaixPy DOC",
+    "description": "MaixPy documentation",
+    "structure": {
+        "summary": "SUMMARY.md",
+        "readme": "README.md"
+    },
+    "variables": {
+        "items": [
+            {
+                "name": "Blog",
+                "link": "https://blog.sipeed.com"
+            },
+            {
+                "name": "Feedback",
+                "links": [
+                    {
+                        "name": "doc",
+                        "link": "https://github.com/sipeed/MaixPy_DOC/issues"
+                    },
+                    {
+                        "name": "code",
+                        "link": "https://github.com/sipeed/MaixPy/issues"
+                    }
+                ]
+            }
+        ],
+        "version": [
+            {
+                "name": "1.0",
+                "links": [
+                    {
+                        "name": "1.0",
+                        "link": "/en/"
+                    }
+                ]
+            }
+        ]
+    }
+}
