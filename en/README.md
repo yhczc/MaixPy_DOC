@@ -1,9 +1,10 @@
 MaixPy Documentation
 ======
 
-<div>
-    <img src="../assets/micropython.png"> <img src="../assets/icon_sipeed2.png"  height="60">
-</div>
+
+|<img src="../assets/micropython.png">|<img src="../assets/icon_sipeed2.png"  height="60">|
+|  --- | --- |
+|[![Build Status](https://travis-ci.org/sipeed/MaixPy_DOC.svg?branch=master)](https://travis-ci.org/sipeed/MaixPy_DOC) |  |
 
 
 ## What is MaixPy

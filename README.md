@@ -6,4 +6,5 @@ Documentation Of MaixPy
 | ------------------------ | ----------- |
 |  |  |
 
+[![Build Status](https://travis-ci.org/sipeed/MaixPy_DOC.svg?branch=master)](https://travis-ci.org/sipeed/MaixPy_DOC)
 
