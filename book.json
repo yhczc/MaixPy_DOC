@@ -2,9 +2,6 @@
     "title": "MaixPy DOC",
     "description": "MaixPy documentation",
     "author":"sipeed",
-    "variables":{
-        "base_url": "https://sipeed.github.io/MaixPy_DOC"
-    },
     "plugins": [
         "my-toolbar",
         "-lunr",
