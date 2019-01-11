@@ -9,8 +9,21 @@
     "variables": {
         "items": [
             {
-                "name": "Blog",
+                "name": "博客",
                 "link": "https://blog.sipeed.com"
+            },
+            {
+                "name": "反馈",
+                "links": [
+                    {
+                        "name": "文档",
+                        "link": "https://github.com/sipeed/MaixPy_DOC/issues"
+                    },
+                    {
+                        "name": "源码",
+                        "link": "https://github.com/sipeed/MaixPy/issues"
+                    }
+                ]
             }
         ],
         "version": [
