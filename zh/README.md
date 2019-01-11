@@ -1,7 +1,7 @@
 MaixPy 文档
 ======
 
-<div>
+<div style="padding-top: 30px;padding-bottom: 30px;">
     <img src="../assets/micropython.png"><img src="../assets/icon_sipeed2.png"  height="60">
 </div>
 
