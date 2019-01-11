@@ -83,12 +83,16 @@ More hardware infomation [here](en/hardware/hardware.md)
 
 Then we can write software, refer to [get started](en/get_started.md)
 
+
+## Feedback
+
+* [Doc feedback](https://github.com/sipeed/MaixPy_DOC/issues)
+* [Code feedback](https://github.com/sipeed/MaixPy/issues)
+
+
 ## Source code
 
 MaixPy source code [on github](https://github.com/sipeed/MaixPy)
 
-
-------------
-
-Maintained by &copy;<a href="https://www.sipeed.com" style="color: #f14c42">Sipeed</a> Co.,Ltd. 
+Maintained by &copy;<a href="https://www.sipeed.com" style="color: #f14c42">Sipeed</a> Co.,Ltd. More contributor [here](https://github.com/sipeed/MaixPy/graphs/contributors)
 
