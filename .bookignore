@@ -13,3 +13,5 @@ package.json
 .travis.yml
 deploy.sh
 serve.sh
+serve_demon.sh
+
