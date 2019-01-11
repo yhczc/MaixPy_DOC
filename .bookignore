@@ -10,3 +10,6 @@ package.json
 *.orig
 *.less
 *.ai
+.travis.yml
+deploy.sh
+serve.sh

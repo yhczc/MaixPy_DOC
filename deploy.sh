@@ -4,6 +4,12 @@ set -o errexit -o nounset
 
 rev=$(git rev-parse --short HEAD)
 
+cp -f index.html build/index.html
+
+cp -f assets/favicon.ico build/gitbook/images/favicon.ico
+
+cp -f assets/icon_sipeed.png build/gitbook/images/apple-touch-icon-precomposed-152.png
+
 cd build
 
 git init
