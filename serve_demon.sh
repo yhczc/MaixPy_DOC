@@ -9,12 +9,12 @@ function cp_files(){
 success_str='Serving book on'
 while [ 0 ];
 do
-a=`cat serve.log |grep "$success_str"`
-b=`cat serve.log|grep "Error"`
+a=`cat serve.tmp |grep "$success_str"`
+b=`cat serve.tmp|grep "Error"`
 
 if [[ "x$a" != "x" ]]; then
     cp_files
-    `echo "">serve.log`
+    `echo "">serve.tmp`
 elif [[ "x$b" != "x" ]]; then
     exit 0
 fi

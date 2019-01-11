@@ -7,5 +7,5 @@ _book/
 *.epub
 *.pdf
 *.mobi
-serve.log
+serve.tmp
 *-lock.json
