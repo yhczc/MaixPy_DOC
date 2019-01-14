@@ -229,7 +229,7 @@ del i2c
 
 ### 例程 1： 扫描从机设备
 
-```
+```python
 from machine import I2C
 
 i2c = I2C(I2C.I2C0, freq=100000, scl=28, sda=29)
@@ -239,7 +239,7 @@ print(devices)
 
 ### 例程 2： 读写
 
-```
+```python
 import time
 from machine import I2C
 
@@ -250,7 +250,7 @@ i2c.readfrom(0x24,5)
 
 ### 例程 3： 从机模式
 
-```
+```python
 from machine import I2C
 
 count = 0
@@ -271,8 +271,7 @@ i2c = I2C(I2C.I2C0, mode=I2C.MODE_SLAVE, scl=28, sda=29, addr=0x24, addr_size=7,
 
 ### 例程 4： OLED(ssd1306 128x64)
 
-```
-
+```python
 import time
 from machine import I2C
 

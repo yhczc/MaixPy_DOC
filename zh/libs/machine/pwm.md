@@ -141,7 +141,7 @@ del pwm
 
 ### 例程 1 （呼吸灯）
 
-```
+```python
 from machine import Timer,PWM
 import time
 
@@ -166,7 +166,7 @@ while True:
 
 ### 例程 2
 
-```
+```python
 import time
 import machine
 
