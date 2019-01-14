@@ -14,6 +14,9 @@ Summary
     - [Dan Dock](hardware/dan_dock.md)
     - [BiT](hardware/bit.md)
     - [Go](hardware/go.md)
+- [Peripheral Modules](hardware/peripheral_modules.md)
+    - [Microphone array]()
+    - [Binocular camera]()
 
 ## Getting Started
 
