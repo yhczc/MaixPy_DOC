@@ -6,8 +6,10 @@ I2C 总线协议，简单地使用两条线（SCL，SDA）可以控制多个从�
 
 * 支持主机模式和从机模式
 * 7 位/10 位寻址模式
-* 标准模式 (0,100Kb/s)
-* 快速模式 (0,400Kb/s)
+* 标准模式 <=100Kb/s
+* 快速模式 <=400Kb/s
+* 超快速模式 <=1000Kb/s
+* 高速模式 3.4Mb/s
 
 ## 构造函数
 
@@ -37,13 +39,15 @@ class machine.I2C(id, mode=Timer.MODE_MASTER, scl, sda, freq=400000, timeout=100
 
 类似构造函数
 
+```python
+I2C.init(id, mode=Timer.MODE_MASTER, scl, sda, freq=400000, timeout=1000, addr=0, addr_size=7, on_recieve=None, on_transmit=None, on_event=None)
+```
+
 #### 参数
 
 与构造函数相同
 
-```python
-I2c.init(id, mode=Timer.MODE_MASTER, scl, sda, freq=400000, timeout=1000, addr=0, addr_size=7, on_recieve=None, on_transmit=None, on_event=None)
-```
+
 
 #### 返回值
 
@@ -53,6 +57,10 @@ I2c.init(id, mode=Timer.MODE_MASTER, scl, sda, freq=400000, timeout=1000, addr=0
 ### scan
 
 扫描I2C总线上的从机
+
+```python
+I2C.scan()
+```
 
 #### 参数
 
@@ -67,11 +75,11 @@ list 对象， 包含了所有扫描到的从机地址
 
 从总线读取数据
 
-#### 参数
-
 ```python
 I2C.readfrom(addr, len, stop=True)
 ```
+
+#### 参数
 
 * `addr`: 从机地址
 * `len`： 数据长度
@@ -85,11 +93,11 @@ I2C.readfrom(addr, len, stop=True)
 
 读取数据并放到制定变量中
 
-#### 参数
-
 ```python
 I2C.readfrom_into(addr, buf, stop=True)
 ```
+
+#### 参数
 
 * `addr`: 从机地址
 * `buf`： `bytearray`类型， 定义了长度，读取到的数据存放在此
@@ -103,11 +111,12 @@ I2C.readfrom_into(addr, buf, stop=True)
 
 发送数据到从机
 
-#### 参数
-
 ```python
 I2C.writeto(addr, buf, stop=True)
 ```
+
+#### 参数
+
 
 * `addr`: 从机地址
 * `buf`： 需要发送的数据
@@ -121,11 +130,11 @@ I2C.writeto(addr, buf, stop=True)
 
 读取从机寄存器
 
-#### 参数
-
 ```python
 I2C.readfrom_mem(addr, memaddr, nbytes, mem_size=8)
 ```
+
+#### 参数
 
 * `addr`: 从机地址
 * `memaddr`： 从机寄存器地址
@@ -141,11 +150,11 @@ I2C.readfrom_mem(addr, memaddr, nbytes, mem_size=8)
 
 读取从机寄存器值到指定变量中
 
-#### 参数
-
 ```python
 I2C.readfrom_mem_into(addr, memaddr, buf, mem_size=8)
 ```
+
+#### 参数
 
 * `addr`: 从机地址
 * `memaddr`： 从机寄存器地址
@@ -161,11 +170,12 @@ I2C.readfrom_mem_into(addr, memaddr, buf, mem_size=8)
 
 写数据到从机寄存器
 
-#### 参数
-
 ```python
 I2C.writeto_mem(addr, memaddr, buf, mem_size=8)
 ```
+
+#### 参数
+
 
 * `addr`: 从机地址
 * `memaddr`： 从机寄存器地址
@@ -180,14 +190,10 @@ I2C.writeto_mem(addr, memaddr, buf, mem_size=8)
 
 注销I2C硬件，释放占用的资源，关闭I2C时钟
 
-e.g.
 ```python
-i2c.deinit()
+I2C.deinit()
 ```
-或者
-```python
-del i2c
-```
+
 #### 参数
 
 无
@@ -195,6 +201,16 @@ del i2c
 #### 返回值
 
 无
+
+#### 例子
+
+```python
+i2c.deinit()
+```
+或者
+```python
+del i2c
+```
 
 
 ## 常量

@@ -4,6 +4,8 @@ machine.Timer
 硬件定时器，可以用来定时触发任务或者处理任务，设定时间到了后可以触发中断（调用回调函数），精度比软件定时器高。
 需要注意的是，定时器在不同的硬件中可能会有不同的表现。MicroPython 的 Timer 类定义了在给定时间段内（或在一段延迟后执行一次回调）执行回调的基本操作，并允许特定的硬件上定义更多的非标准行为（因此不能移植到其他板）。
 
+共有 3 个定时器， 每个定时器有 4 个通道可以使用
+
 ## 构造函数
 
 ```python
@@ -38,11 +40,32 @@ class machine.Timer(id, channel, mode=Timer.MODE_ONE_SHOT, period=1000, unit=Tim
 Timer.init(id, channel, mode=Timer.MODE_ONE_SHOT, period=1000, unit=Timer.UNIT_MS, callback=None, arg=None, start=True, priority=1, div=0)
 ```
 
+#### 参数
+
+类似构造函数
+
+#### 返回值
+
+无
+
 ### callback
 
 获取或者设置回调函数
 
-例：
+```python
+Timer.callback(callback)
+```
+
+#### 参数
+
+* `callback`： 设置的回调函数，可选参数， 如果不传参数，则只返回先有的回调函数
+
+#### 返回值
+
+当前的回调函数
+
+#### 例子
+
 ```python
 def on_timer(timer,param):
     print("time up:",timer)
@@ -56,7 +79,20 @@ print(on_timer, tim.callback())
 
 获取或者设置定时周期
 
-例：
+```python
+Timer.period(period)
+```
+
+#### 参数
+
+* `period`： 可选参数，配置周期， 如果不传参数， 则只返回当前周期值
+
+#### 返回值
+
+当前周期值
+
+#### 例子
+
 ```python
 tim.period(2000)
 print( tim.period() )
@@ -66,7 +102,20 @@ print( tim.period() )
 
 启动定时器
 
-e.g.
+```python
+Timer.start()
+```
+
+#### 参数
+
+无
+
+#### 返回值
+
+无
+
+#### 例子
+
 ```python
 tim.start()
 ```
@@ -75,15 +124,52 @@ tim.start()
 
 停止定时器
 
+```python
+Timer.stop()
+```
+
+#### 参数
+
+无
+
+#### 返回值
+
+无
+
 ### restart
 
 重新开启定时器
+
+```python
+Timer.restart()
+```
+
+#### 参数
+
+无
+
+#### 返回值
+
+无
 
 ### deinit/\__del\__
 
 注销定时器，并且注销硬件的占用，关闭硬件的时钟
 
-e.g.
+```python
+Timer.deinit()
+```
+
+#### 参数
+
+无
+
+#### 返回值
+
+无
+
+#### 例子
+
 ```python
 tim.deinit()
 ```

@@ -136,6 +136,32 @@ SPI.write(write_buf, read_buf, cs=SPI.CS0)
 
 无
 
+### deinit/\__del\__
+
+注销 SPI，释放硬件，关闭 SPI 时钟
+
+```python
+SPI.deinit()
+```
+
+#### 参数
+
+无
+
+#### 返回值
+
+无
+
+#### 例子
+
+```python
+spi.deinit()
+```
+或者
+```
+del spi
+```
+
 ## 常量
 
 * `SPI0`: SPI 0

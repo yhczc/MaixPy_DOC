@@ -3,6 +3,8 @@ machine.PWM
 
 PWM： 脉宽调制模块， 硬件支持的PWM， 可以指定任意引脚（0到47引脚）
 
+每个 PWM 依赖于一个定时器， 即当定时器与 PWM 功能绑定后， 不能作为普通定时器使用了。 因为有 3 个定时器， 每个定时器有 4 个通道， 即最大可以同时产生 12 路 PWM 波形
+
 ## 构造函数
 
 ```python
@@ -13,7 +15,7 @@ class machine.PWM(tim, freq, duty, pin, enable=True)
 
 ### 参数
 
-* `tim`: 每个PWM依赖一个定时器来产生波形， 所以这里需要传一个定时器对象
+* `tim`: 每个PWM依赖一个定时器来产生波形， 所以这里需要传一个定时器对象，这个定时器对象必须初始化时必须指定定时器 ID 和通道号
 * `freq`： PWM 波形频率
 * `duty`： PWM 占空比， 指高电平占整个周期的百分比，取值：[0,100]
 * `enable`： 是否立即开始产生波形，默认位`True`，及对象生成后立即开始在指定的引脚上产生 PWM 波形
@@ -24,13 +26,13 @@ class machine.PWM(tim, freq, duty, pin, enable=True)
 
 类似构造函数
 
-#### 参数
-
-与构造函数相同
-
 ```python
 PWM.init(tim, freq, duty, pin, enable=True)
 ```
+
+#### 参数
+
+与构造函数相同
 
 #### 返回值
 
@@ -41,9 +43,13 @@ PWM.init(tim, freq, duty, pin, enable=True)
 
 获取或者设置 PWM 频率
 
+```python
+PWM.freq(freq)
+```
+
 #### 参数
 
-* `freq`： PWM 频率， 可选， 如果不传参数则步设置只返回当前频率值
+* `freq`： PWM 频率， 可选参数， 如果不传参数则步设置只返回当前频率值
 
 #### 返回值
 
@@ -53,6 +59,10 @@ PWM.init(tim, freq, duty, pin, enable=True)
 ### duty
 
 获取或者设置 PWM 占空比
+
+```python
+PWM.duty(duty)
+```
 
 #### 参数
 
@@ -67,6 +77,10 @@ PWM.init(tim, freq, duty, pin, enable=True)
 
 使能 PWM 输出， 使指定的引脚上立即产生波形
 
+```python
+PWM.enable()
+```
+
 #### 参数
 
 无
@@ -78,6 +92,10 @@ PWM.init(tim, freq, duty, pin, enable=True)
 ### disable
 
 失能 PWM 输出， 指定的引脚不再产生波形
+
+```python
+PWM.disable()
+```
 
 #### 参数
 
@@ -91,14 +109,10 @@ PWM.init(tim, freq, duty, pin, enable=True)
 
 注销 PWM 硬件，释放占用的资源，关闭 PWM 时钟
 
-e.g.
 ```python
-pwm.deinit()
+PWM.deinit()
 ```
-或者
-```python
-del pwm
-```
+
 #### 参数
 
 无
@@ -107,6 +121,15 @@ del pwm
 
 无
 
+#### 例子
+
+```python
+pwm.deinit()
+```
+或者
+```python
+del pwm
+```
 
 ## 常量
 
