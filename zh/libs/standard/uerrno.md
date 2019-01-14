@@ -3,7 +3,7 @@ uerrno — 系统错误代码
 ====
 
 
-该模块实现了相应CPython模块的子集，如下所述。有关更多信息，请参阅原始CPython文档：[errno](https://docs.python.org/3.5/library/errno.html#module-errno）。
+该模块实现了相应CPython模块的子集，如下所述。有关更多信息，请参阅原始CPython文档：[errno](https://docs.python.org/3.5/library/errno.html#module-errno)。
 
 该模块描述了 `OSError` 错误的错误标识。特定的代码库存取决于 `Micropython 的移植`， 错误会在特定的会出现错误的函数进行说明。
 
