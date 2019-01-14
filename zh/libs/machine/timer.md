@@ -1,37 +1,38 @@
 machine.Timer
 ===========
 
-Hardware timers deal with timing of periods and events. Timers are perhaps the most flexible and heterogeneous kind of hardware in MCUs and SoCs, differently greatly from a model to a model. MicroPython’s Timer class defines a baseline operation of executing a callback with a given period (or once after some delay), and allow specific boards to define more non-standard behavior (which thus won’t be portable to other boards).
+硬件定时器，可以用来定时触发任务或者处理任务，设定时间到了后可以触发中断（调用回调函数），精度比软件定时器高。
+需要注意的是，定时器在不同的硬件中可能会有不同的表现。MicroPython 的 Timer 类定义了在给定时间段内（或在一段延迟后执行一次回调）执行回调的基本操作，并允许特定的硬件上定义更多的非标准行为（因此不能移植到其他板）。
 
-## Constructors
+## 构造函数
 
 ```python
 class machine.Timer(id, channel, mode=Timer.MODE_ONE_SHOT, period=1000, unit=Timer.UNIT_MS, callback=None, arg=None, start=True, priority=1, div=0)
 ```
 
-Construct a new timer object of the given id. 
+通过指定的参数新建一个 Timer 对象
 
-### Parameters
+### 参数
 
-* `id`: Timer ID, [0~2] \(Timer.TIMER0~TIMER3\)
-* `channel`: Timer channel, [Timer.CHANNEL0~Timer.CHANNEL3]
-* `mode`: Timer mode, `MODE_ONE_SHOT` or `MODE_PERIODIC`or `MODE_PWM`
-* `period`: Timer period, after `period` the callback will be invoke, (0,~).
-* `unit`: unit of timer, default `ms`, `Timer.UNIT_S` or `Timer.UNIT_MS` or `Timer.UNIT_US` or`Timer.UNIT_NS`
-* `callback`: Timer callback, two parameters, first is `Timer`, second is user param, see `param` parameter below. 
-> callback execute in interrupt, so don't stay too long in callback
-* `arg`: Argument dilivered to callback
-* `start`: If start instantly timer after init, `True`:start, `False`:not start, need call `start()` function.
-* `priority`: interrupt priority, [1,7].
-* `div`: Timer clock divider,[0,255],default to 0. clk_timer = clk_pll0/2^(div+1)
-> clk_timer*period(unit:s) should < 2^32 and >=1
+* `id`: Timer ID, [0~2] \(Timer.TIMER0~TIMER2\)
+* `channel`: Timer 通道, [Timer.CHANNEL0~Timer.CHANNEL3]
+* `mode`: Timer 模式, `MODE_ONE_SHOT` 或者 `MODE_PERIODIC` 或者 `MODE_PWM`
+* `period`: Timer 周期, 在启动定时器后 `period` 时间， 回调函数将会被调用，(0,~)
+* `unit`: 设置周期的单位，默认位毫秒（`ms`），`Timer.UNIT_S` 或者 `Timer.UNIT_MS` 或者 `Timer.UNIT_US` 或者`Timer.UNIT_NS`
+* `callback`: 定时器回调函数， 定义了两个参数， 一个是定时器对象`Timer`， 第二个是在定义对象是希望传的参数`arg`，更多请看`arg`参数解释
+> 注意：回调函数是在中断中调用的，所以在回调函数中请不要占用太长时间以及做动态分配开关中断等动作
+* `arg`: 希望传给回调函数的参数，作为回调函数的第二个参数
+* `start`: 是否在对象构建成功后立即开始定时器， `True`：立即开始， `False`:不立即开启，需要调用`start()`函数来启动定时器
+* `priority`: 硬件定时器中断优先级， 与特定的CPU相关， 在K210中，取值范围是[1,7]， 值越小优先级越高
+* `div`: 硬件定时器分频器，取值范围[0,255]， 默认为0， clk_timer（定时器时钟频率） = clk_pll0（锁相环0频率）/2^(div+1)
+> clk_timer*period(unit:s) 应该 < 2^32 并且 >=1
 
 
-## Methods
+## 方法
 
 ### init
 
-Same to constructor
+类似构造函数
 
 ```python
 Timer.init(id, channel, mode=Timer.MODE_ONE_SHOT, period=1000, unit=Timer.UNIT_MS, callback=None, arg=None, start=True, priority=1, div=0)
@@ -39,9 +40,9 @@ Timer.init(id, channel, mode=Timer.MODE_ONE_SHOT, period=1000, unit=Timer.UNIT_M
 
 ### callback
 
-Get or set callback
+获取或者设置回调函数
 
-e.g.
+例：
 ```python
 def on_timer(timer,param):
     print("time up:",timer)
@@ -53,9 +54,9 @@ print(on_timer, tim.callback())
 
 ### period
 
-Get or set period
+获取或者设置定时周期
 
-e.g.
+例：
 ```python
 tim.period(2000)
 print( tim.period() )
@@ -63,7 +64,7 @@ print( tim.period() )
 
 ### start
 
-Start timer
+启动定时器
 
 e.g.
 ```python
@@ -72,48 +73,48 @@ tim.start()
 
 ### stop
 
-Stop timer
+停止定时器
 
 ### restart
 
-Restart timer
+重新开启定时器
 
-### deinit/__del__
+### deinit/\__del\__
 
-Deinitialises the timer. Stops the timer, and disables the timer peripheral.
+注销定时器，并且注销硬件的占用，关闭硬件的时钟
 
 e.g.
 ```python
 tim.deinit()
 ```
-or
+或者
 ```python
 del tim
 ```
 
-## Constants
+## 常量
 
 * `TIMER0`: Timer0 id
 * `TIMER1`: Timer1 id
 * `TIMER2`: Timer2 id
-* `CHANNEL0`: Timer channel 0
-* `CHANNEL1`: Timer channel 1
-* `CHANNEL2`: Timer channel 2
-* `CHANNEL3`: Timer channel 3
-* `MODE_ONE_SHOT`: Timer only run once
-* `MODE_PERIODIC`: Timer always run
-* `MODE_PWM`: Timer used by PWM
-* `UNIT_S`: unit flag (s)
-* `UNIT_MS`: unit flag (ms)
-* `UNIT_US`: unit flag (us)
-* `UNIT_NS`: unit flag (ns)
+* `CHANNEL0`: Timer 通道 0
+* `CHANNEL1`: Timer 通道 1
+* `CHANNEL2`: Timer 通道 2
+* `CHANNEL3`: Timer 通道 3
+* `MODE_ONE_SHOT`: Timer 只运行一次（回调一次）
+* `MODE_PERIODIC`: Timer 始终运行（连续回调）
+* `MODE_PWM`: 定时器不用来回调函数，用以产生PWM
+* `UNIT_S`:  单位秒 (s)
+* `UNIT_MS`: 单位毫秒 (ms)
+* `UNIT_US`: 单位微秒 (us)
+* `UNIT_NS`: 单位纳秒 (ns)
 
 
-## Demo
+## 例程
 
-### Demo 1
+### 例程 1
 
-Print data after 3s just once
+定时3秒后打印信息
 
 ```python
 from machine import Timer
@@ -127,9 +128,9 @@ print("period:",tim.period())
 tim.start()
 ```
 
-### Demo 2
+### 例程 2
 
-Print every 1s, and stop 5s then restart 5s then shutdown
+每隔 1 秒打印消息， 停止 5 秒后再重启， 5 秒后关闭并注销定时器
 
 ```python
 import time

@@ -13,7 +13,7 @@ Construct a new timer object of the given id.
 
 ### Parameters
 
-* `id`: Timer ID, [0~2] \(Timer.TIMER0~TIMER3\)
+* `id`: Timer ID, [0~2] \(Timer.TIMER0~TIMER2\)
 * `channel`: Timer channel, [Timer.CHANNEL0~Timer.CHANNEL3]
 * `mode`: Timer mode, `MODE_ONE_SHOT` or `MODE_PERIODIC`or `MODE_PWM`
 * `period`: Timer period, after `period` the callback will be invoke, (0,~).
