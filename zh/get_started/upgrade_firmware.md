@@ -59,5 +59,5 @@ sudo python3 kflash.py -p /dev/ttyUSB0 -b 2000000 -B dan firmware.bin
 
 ### Windows
 
-双机下载的软件，运行后选择固件、串口等，点击下载即可
+双机运行下载的软件，运行后选择固件、串口等，点击下载即可
 

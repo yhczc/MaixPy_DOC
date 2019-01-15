@@ -17,7 +17,7 @@ MaixPy 是将 [Micropython](http://micropython.org/) 移植到 [K210](https://ke
 > K210 在硬件上集成了机器视觉和机器听觉能力， 是一款定位 AI 和 AIOT 市场的SoC，同时也是一颗方便的MCU。 
 
 
-Micropython 让我们在 K210 上编程更加简单快捷， 我们也将源代码开源在 [github]((https://github.com/sipeed/MaixPy)) 上
+Micropython 让我们在 K210 上编程更加简单快捷， 我们也将源代码开源在 [github](https://github.com/sipeed/MaixPy) 上
 
 比如我们需要寻找I2C总线上的设备，只需要使用如下代码即可实现：
 
@@ -62,11 +62,11 @@ while True:
 * 学习关于 Micropython 的基础知识
 * 库和接口（API）文档查询
 
-## 让我们开始打开 MaixPy 的神器大门吧
+## 让我们开始打开 MaixPy 的神奇大门吧
 
 首先我们选择一款适合自己的开发板， 目前有如下几款高性价比的开发板（核心板）：
 
-* 使用了 Sipeed M1(Dan) 模块的 Dan dock
+* 使用了 Sipeed M1(荔枝丹) 模块的 Dan dock
 
 ![Dan dock](../assets/Dan_Dock.png)
 

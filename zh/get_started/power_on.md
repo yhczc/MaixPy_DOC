@@ -21,11 +21,12 @@ sudo apt install screen
 sudo screen /dev/ttyUSB0 115200
 ```
 然后点击回车键，即可看到 MaixPy 的交互界面了
+
 `>>>`
 
-输入help()，可以查看帮助
+输入 `help()`，可以查看帮助
 
-要退出`minicom`， 按<kbd>Ctrl+A</kbd> <kbd>K</kbd>，确认退出即可
+要退出`minicom`， 按 `Ctrl+A` `K`，然后按 `Y` 确认退出即可
 
 
 #### minicom
@@ -39,11 +40,12 @@ sudo minicom
 ```
 
 进入`minicom`后点击回车键，即可看到 MaixPy 的交互界面了
+
 `>>>`
 
-输入help()，可以查看帮助
+输入 `help()`，可以查看帮助
 
-要退出`minicom`， 按<kbd>Ctrl+A</kbd> <kbd>X</kbd>，确认退出即可
+要退出`minicom`， 按 `Ctrl+A` `X`，按 `Enter` 确认退出即可
 
 
 
@@ -54,9 +56,10 @@ sudo minicom
 然后选择串口模式， 然后设置串口和波特率，打开串口。
 
 然后点击回车键，即可看到 MaixPy 的交互界面了
+
 `>>>`
 
-输入help()，可以查看帮助
+输入 `help()`，可以查看帮助
 
 
 
