@@ -5,11 +5,6 @@ MaixPy Documentation
     <img src="../assets/micropython.png"><img src="../assets/icon_sipeed2.png"  height="60">
 </div>
 
-|   branch  |   build status  |
-| --------- | --------------- |
-|doc master |[![Build Status](https://travis-ci.org/sipeed/MaixPy_DOC.svg?branch=master)](https://travis-ci.org/sipeed/MaixPy_DOC) |
-|doc dev    |[![Build Status](https://travis-ci.org/sipeed/MaixPy_DOC.svg?branch=dev)](https://travis-ci.org/sipeed/MaixPy_DOC)    |
-| code master | -- |
 
 ## What is MaixPy
 
@@ -87,15 +82,28 @@ More hardware infomation [here](en/hardware/hardware.md)
 Then we can write software, refer to [get started](en/get_started.md)
 
 
-## Feedback
-
-* [Doc feedback](https://github.com/sipeed/MaixPy_DOC/issues)
-* [Code feedback](https://github.com/sipeed/MaixPy/issues)
-
-
 ## Source code
 
 MaixPy source code [on github](https://github.com/sipeed/MaixPy)
 
 Maintained by &copy;<a href="https://www.sipeed.com" style="color: #f14c42">Sipeed</a> Co.,Ltd. More contributor [here](https://github.com/sipeed/MaixPy/graphs/contributors)
+
+
+## Source code of MaixPy documentation
+
+Doumentation will be edit if code api changed,
+
+source of doc on [github](https://github.com/sipeed/MaixPy_DOC)
+
+|   branch  |   page build status  |
+| --------- | --------------- |
+| master |[![Build Status](https://travis-ci.org/sipeed/MaixPy_DOC.svg?branch=master)](https://travis-ci.org/sipeed/MaixPy_DOC) |
+| dev    |[![Build Status](https://travis-ci.org/sipeed/MaixPy_DOC.svg?branch=dev)](https://travis-ci.org/sipeed/MaixPy_DOC)    |
+
+
+## Feedback
+
+* [Doc feedback](https://github.com/sipeed/MaixPy_DOC/issues)
+* [Code feedback](https://github.com/sipeed/MaixPy/issues)
+
 

@@ -6,11 +6,6 @@ MaixPy 文档
 </div>
 
 
-|   branch  |   build status  |
-| --------- | --------------- |
-|doc master |[![Build Status](https://travis-ci.org/sipeed/MaixPy_DOC.svg?branch=master)](https://travis-ci.org/sipeed/MaixPy_DOC) |
-|doc dev    |[![Build Status](https://travis-ci.org/sipeed/MaixPy_DOC.svg?branch=dev)](https://travis-ci.org/sipeed/MaixPy_DOC)    |
-| code master | -- |
 
 
 ## 什么是 MaixPy
@@ -98,6 +93,20 @@ MaixPy 源码是指 运行在 K210 上的 Micropython 的解析器， 使用 `C�
 MaixPy 源码托管在 [github](https://github.com/sipeed/MaixPy)
 
 本项目主要由 &copy;<a href="https://www.sipeed.com" style="color: #f14c42">Sipeed</a> Co.,Ltd. 维护， 并接受来自开源社区的贡献， 具体贡献这见[贡献者列表](https://github.com/sipeed/MaixPy/graphs/contributors)
+
+## MaixPy 文档源码
+
+修改代码后，文档也会随之更新，
+
+文档源码托管在 [github](https://github.com/sipeed/MaixPy_DOC)
+
+|   分支     |   文档自动构建状态  |
+| --------- | --------------- |
+| master |[![Build Status](https://travis-ci.org/sipeed/MaixPy_DOC.svg?branch=master)](https://travis-ci.org/sipeed/MaixPy_DOC) |
+| dev    |[![Build Status](https://travis-ci.org/sipeed/MaixPy_DOC.svg?branch=dev)](https://travis-ci.org/sipeed/MaixPy_DOC)    |
+
+
+
 
 ## 反馈
 

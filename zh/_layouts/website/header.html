@@ -21,10 +21,10 @@
 {% for item in book.version %}
     {% if item.links %}
     <li class="version-link">
-        <a class="btn" style="color:#444">Version: <span style="font-weight:bold">{{item.name}}</span></a>
+        <a class="btn" >版本 <span style="font-weight:bold">{{item.name}}</span></a>
         <ul class="hovershow">
             {% for entry in item.links %}
-            <li><a href="{{entry.link}}" class="btn">Version: <span style="font-weight:bold">{{entry.name}}</span></a></li>
+            <li><a href="{{entry.link}}" class="btn">版本: <span style="font-weight:bold">{{entry.name}}</span></a></li>
             {% endfor %}
         </ul>
     </li>                

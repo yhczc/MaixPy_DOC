@@ -145,10 +145,10 @@
   }
 }
 .sipeed-navbar ul .version-link {
-  float: right;
+  float: left;
   z-index: 10;
   padding-right: 15px;
-  text-align: right;
+  /* text-align: right; */
   min-width: 180px;
 }
 .version-link ul li .btn {
@@ -169,6 +169,10 @@
 
 .markdown-section li code{
   color: #ec5d11;
+}
+
+#anchor-navigation-ex-navbar {
+  top:100px;
 }
 
 
