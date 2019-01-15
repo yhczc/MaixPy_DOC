@@ -12,7 +12,7 @@ cp -f assets/favicon.ico build/gitbook/images/favicon.ico
 cp -f assets/icon_sipeed.png build/gitbook/images/apple-touch-icon-precomposed-152.png
 
 echo "current build branch: --$curr_branch--"
-git clone -b gh-pages https://github.com/Ai-Thinker-Open/GPRS_C_SDK_DOC.git ./old
+git clone -b gh-pages https://github.com/sipeed/MaixPy_DOC.git ./old
 rm -rf ./old/.git/
 if [[ '$curr_branch' == 'master' ]]; then
     if [[ -d './old/dev' ]]; then
