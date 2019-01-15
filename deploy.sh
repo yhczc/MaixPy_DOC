@@ -3,14 +3,15 @@
 set -o errexit -o nounset
 
 rev=$(git rev-parse --short HEAD)
-tmp=$(cat .git/HEAD|awk '{print $2}')
-curr_branch=${tmp##*/}
+BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
+echo "TRAVIS_BRANCH=$TRAVIS_BRANCH, PR=$PR, BRANCH=$BRANCH"
+curr_branch=$TRAVIS_BRANCH
 
 cp -f index.html build/index.html
 cp -f assets/favicon.ico build/gitbook/images/favicon.ico
 cp -f assets/icon_sipeed.png build/gitbook/images/apple-touch-icon-precomposed-152.png
 
-echo "branch: --$curr_branch--"
+echo "current build branch: --$curr_branch--"
 git clone -b gh-pages https://github.com/Ai-Thinker-Open/GPRS_C_SDK_DOC.git ./old
 rm -rf ./old/.git/
 if [[ '$curr_branch' == 'master' ]]; then
