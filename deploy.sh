@@ -15,12 +15,16 @@ echo "current build branch: --$curr_branch--"
 git clone -b gh-pages https://github.com/sipeed/MaixPy_DOC.git ./old
 rm -rf ./old/.git/
 if [[ '$curr_branch' == 'master' ]]; then
+    echo "master"
     if [[ -d './old/dev' ]]; then
+        echo "copy dev"
         cp -r ./old/dev ./build/
     fi
     cd ./old
     v_folder=`find ./ -maxdepth 1 -name 'v*.*'`
+    echo "version folder:$v_folder"
     if [[ 'x$v_folder' != 'x' ]]; then
+        echo "copy version folder"
         cp -r $v_folder ../build/
     fi
     cd ..
