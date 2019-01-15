@@ -2,6 +2,6 @@ Libraries
 =======
 
 
-* [standard](/en/libs/machine/standard.md)
-* [machine](/en/libs/machine/machine.md)
+* [standard](standard/README.md)
+* [machine](machine/README.md)
 
