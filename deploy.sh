@@ -23,7 +23,7 @@ if [[ "$curr_branch" == "master" ]]; then
     cd ./old
     v_folder=`find ./ -maxdepth 1 -name 'v*.*'`
     echo "version folder:$v_folder"
-    if [[ 'x$v_folder' != 'x' ]]; then
+    if [[ "x$v_folder" != "x" ]]; then
         echo "copy version folder"
         cp -r $v_folder ../build/
     fi
