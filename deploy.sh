@@ -11,10 +11,10 @@ cp -f index.html build/index.html
 cp -f assets/favicon.ico build/gitbook/images/favicon.ico
 cp -f assets/icon_sipeed.png build/gitbook/images/apple-touch-icon-precomposed-152.png
 
-echo "current build branch: --$curr_branch--"
 git clone -b gh-pages https://github.com/sipeed/MaixPy_DOC.git ./old
 rm -rf ./old/.git/
-if [[ '$curr_branch' == 'master' ]]; then
+echo "current build branch: --$curr_branch--"
+if [[ "$curr_branch" == "master" ]]; then
     echo "master"
     if [[ -d './old/dev' ]]; then
         echo "copy dev"
@@ -28,13 +28,15 @@ if [[ '$curr_branch' == 'master' ]]; then
         cp -r $v_folder ../build/
     fi
     cd ..
-elif [[ '$curr_branch' == 'dev' ]]; then
+elif [[ "$curr_branch" == "dev" ]]; then
+    echo "dev"
     rm -rf ./old/dev
     mkdir ./old/dev
     cp -r ./build/* ./old/dev
     rm -rf ./build
     mv ./old ./build
 else
+    echo "not master or dev"
     rm -rf ./old/$curr_branch
     mkdir ./old/$curr_branch
     cp -r ./build/* ./old/$curr_branch

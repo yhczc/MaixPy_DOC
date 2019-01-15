@@ -27,11 +27,15 @@
         ],
         "version": [
             {
-                "name": "1.0",
+                "name": "master",
                 "links": [
                     {
-                        "name": "1.0",
+                        "name": "master",
                         "link": "/en/"
+                    },
+                    {
+                        "name": "dev",
+                        "link": "/dev/en/"
                     }
                 ]
             }
