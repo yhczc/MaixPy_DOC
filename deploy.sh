@@ -10,7 +10,9 @@ cp -f assets/icon_sipeed.png build/gitbook/images/apple-touch-icon-precomposed-1
 
 tmp=`cat .git/HEAD|awk '{print $2}'`
 curr_branch=${tmp##*/}
+echo "branch: --$curr_branch--"
 git clone -b gh-pages https://github.com/Ai-Thinker-Open/GPRS_C_SDK_DOC.git ./old
+rm -rf ./old/.git/
 if [[ '$curr_branch' == 'master' ]]; then
     if [[ -d './old/dev' ]]; then
         cp -r ./old/dev ./build/
@@ -22,10 +24,14 @@ if [[ '$curr_branch' == 'master' ]]; then
     fi
     cd ..
 elif [[ '$curr_branch' == 'dev' ]]; then
+    rm -rf ./old/dev
+    mkdir ./old/dev
     cp -r ./build/* ./old/dev
     rm -rf ./build
     mv ./old ./build
 else
+    rm -rf ./old/$curr_branch
+    mkdir ./old/$curr_branch
     cp -r ./build/* ./old/$curr_branch
     rm -rf ./build
     mv ./old ./build
