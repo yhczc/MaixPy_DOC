@@ -25,6 +25,7 @@ Summary
     - [Upgrade Firmware](get_started/upgrade_firmware.md)
 - [Power On](get_started/power_on.md)
 - [LED Blink](get_started/led_blink.md)
+- [Upload Script To Dev Board](get_started/upload_script.md)
 - [How To Read Docs](get_started/how_to_read.md)
 
 ## Reference
