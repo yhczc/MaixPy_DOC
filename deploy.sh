@@ -3,13 +3,13 @@
 set -o errexit -o nounset
 
 rev=$(git rev-parse --short HEAD)
+tmp=$(cat .git/HEAD|awk '{print $2}')
+curr_branch=${tmp##*/}
 
 cp -f index.html build/index.html
 cp -f assets/favicon.ico build/gitbook/images/favicon.ico
 cp -f assets/icon_sipeed.png build/gitbook/images/apple-touch-icon-precomposed-152.png
 
-tmp=`cat .git/HEAD|awk '{print $2}'`
-curr_branch=${tmp##*/}
 echo "branch: --$curr_branch--"
 git clone -b gh-pages https://github.com/Ai-Thinker-Open/GPRS_C_SDK_DOC.git ./old
 rm -rf ./old/.git/
