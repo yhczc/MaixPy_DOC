@@ -128,6 +128,10 @@ Zh/
 * The file name is not limited to `README.md`, other file names are named with lowercase + underscore, such as `get_hardware.md`
 
 
+## Catalog and links
+
+Try to guide readers to use the directory, and use the jump link in the text with caution. If the link jumps in a mess, it will cause the document to look messy and it will be difficult to read.
+
 
 ## Chinese and English (multi-language) page file directory structure and file name are the same
 
@@ -143,4 +147,20 @@ For example, English is accessing `en/get_started/how_to_read.md`. After clickin
 * Need to explain the constructor, function, constant, etc.
 * **Explain that you can't be lazy. Simply translate the function name again. You need to explain the function of the function, the range of parameters, and the point of attention**
 
+
+## Multi-version management
+
+In addition to the Chinese and English (multi-language) support (not automatic translation, manual modification), the document also has multi-version management.
+
+Each version is a branch with requirements for the branch name, which are:
+
+* `master` branch is the main branch
+* `dev` branch for development branch
+* Other published historical versions start with a lowercase `v`, such as creating a branch called `v1.2`
+
+After creating a new branch, you need to modify the version link in `book.json` in the directory of each language version, otherwise the reader can't find the entry.
+
+You can preview it locally under the newly created branch (see the root directory `README.md` for the preview method). Note that the previewed page is the current branch. If you want to preview other branches locally, you need to switch to other points before previewing. Just fine.
+
+After confirming that the error is modified, push the branch to the remote (github), the automatic build system will be automatically built and published to the pages branch, and the effect will be seen when the access URL is built.
 
