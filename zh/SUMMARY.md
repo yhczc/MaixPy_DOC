@@ -53,6 +53,8 @@ Summary
         - [SPI](libs/machine/spi.md)
         - [Timer](libs/machine/timer.md)
         - [UART](libs/machine/uart.md)
+    - [Maix](libs/Maix/README.md)
+        - [lcd](libs/Maix/lcd.md)
 
 ## 其它
 
